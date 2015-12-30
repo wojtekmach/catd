@@ -1,4 +1,16 @@
 language: go
-
 go:
-  - 1.5
+- 1.5
+
+before_deploy:
+  - "./build.sh"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: WjgEpr7J8TX5T0QevwI1JckE+noN6TgljKDO7RRxyM5IlFgykVSfbZ/TAbfVXJNW+HyKvUUrmi7mBkSprBoXgNmM/blwFs+ezVhE8FoHtpVKw9O1K8POFfqsnXFHmTqowc5BeACaGl4iQYFqvWf/QcqjHSWVgB+4m9LQP16569I=
+  file:
+    - "bin/catd_mac"
+    - "bin/catd_linux"
+  on:
+    repo: wojtekmach/catd
