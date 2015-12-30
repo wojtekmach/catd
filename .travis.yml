@@ -5,6 +5,9 @@ go:
 before_deploy:
   - "./build.sh"
 
+after_deploy:
+  - "env"
+
 deploy:
   provider: releases
   api_key:
@@ -12,5 +15,5 @@ deploy:
   file:
     - "bin/catd_mac"
     - "bin/catd_linux"
-  on:
-    tags: true
+  # on:
+  #   tags: true
