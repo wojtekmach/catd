@@ -13,4 +13,4 @@ deploy:
     - "bin/catd_mac"
     - "bin/catd_linux"
   on:
-    repo: wojtekmach/catd
+    tags: true
