@@ -2,14 +2,10 @@
 
 set -e
 
-echo "building for OSX..."
 GOOS=darwin go build
-ls
 mv catd bin/catd_mac
-echo "done."
+shasum -a 256 bin/catd_mac
 
-echo "building for Linux..."
 GOOS=linux go build
-ls
 mv catd bin/catd_linux
-echo "done."
+shasum -a 256 bin/catd_linux
